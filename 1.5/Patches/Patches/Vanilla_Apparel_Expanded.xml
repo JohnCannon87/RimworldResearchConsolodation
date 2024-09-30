@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Apparel Expanded</li>
+        </mods>
+        <!-- If the mod is loaded, apply the following patch -->
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- Change existing research defs to point to alternatives-->
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VAE_MilitaryClothing']</xpath>
+                    <value><researchPrerequisite>ComplexClothing</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VAE_CasualWear']</xpath>
+                    <value><researchPrerequisite>ComplexClothing</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VAE_WorkAttire']</xpath>
+                    <value><researchPrerequisite>ComplexClothing</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VAE_SterileAttire']</xpath>
+                    <value><researchPrerequisite>ComplexClothing</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VAE_FormalWear']</xpath>
+                    <value><researchPrerequisite>NobleApparel</researchPrerequisite></value>
+                </li>
+                <!-- Delete now outdated Research Defs -->
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VAE_MilitaryClothing']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VAE_CasualWear']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VAE_WorkAttire']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VAE_SterileAttire']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VAE_FormalWear']</xpath>
+                </li>
+                <!-- Replace any references to research dependencies -->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VAE_MilitaryClothing']</xpath>
+                    <value><li>ComplexClothing</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VAE_CasualWear']</xpath>
+                    <value><li>ComplexClothing</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VAE_WorkAttire']</xpath>
+                    <value><li>ComplexClothing</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VAE_SterileAttire']</xpath>
+                    <value><li>ComplexClothing</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VAE_FormalWear']</xpath>
+                    <value><li>NobleApparel</li></value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

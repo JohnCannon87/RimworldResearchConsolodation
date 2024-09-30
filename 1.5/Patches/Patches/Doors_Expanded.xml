@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Doors Expanded</li>
+        </mods>
+        <!-- If the mod is loaded, apply the following patch -->
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- Change existing research defs to point to alternatives-->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='ProjectHeron_PrisonDoors']</xpath>
+                    <value><li>ComplexFurniture</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='ProjectHeron_Curtains']</xpath>
+                    <value><li>ComplexFurniture</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='ProjectHeron_Gates']</xpath>
+                    <value><li>ComplexFurniture</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='ProjectHeron_BlastDoors']</xpath>
+                    <value><li>Autodoors</li></value>
+                </li>
+                <!-- Delete now outdated Research Def -->
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='ProjectHeron_PrisonDoors']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='ProjectHeron_Curtains']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='ProjectHeron_Gates']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='ProjectHeron_BlastDoors']</xpath>
+                </li>
+                <!-- Replace any references to research dependencies -->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='ProjectHeron_PrisonDoors']</xpath>
+                    <value><li>ComplexFurniture</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='ProjectHeron_Curtains']</xpath>
+                    <value><li>ComplexFurniture</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='ProjectHeron_Gates']</xpath>
+                    <value><li>ComplexFurniture</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='ProjectHeron_BlastDoors']</xpath>
+                    <value><li>Autodoors</li></value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>
