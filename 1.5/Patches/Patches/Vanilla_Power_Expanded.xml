@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Furniture Expanded - Power</li>
+        </mods>
+        <!-- If the mod is loaded, apply the following patch -->
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- Change existing research defs to point to alternatives-->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VFE_AdvancedBatteries']</xpath>
+                    <value><li>Batteries</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VFE_IndustrialGenerators']</xpath>
+                    <value><li>VFE_AdvancedPowerSources</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VFE_NuclearPower']</xpath>
+                    <value><li>VFE_AdvancedPowerSources</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VFE_TidalPower']</xpath>
+                    <value><li>VFE_AdvancedPowerSources</li></value>
+                </li>
+                <!-- Delete now outdated Research Def -->
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VFE_AdvancedBatteries']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VFE_IndustrialGenerators']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VFE_NuclearPower']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VFE_TidalPower']</xpath>
+                </li>
+                <!-- Replace any references to research dependencies -->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VFE_AdvancedBatteries']</xpath>
+                    <value><li>Batteries</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VFE_IndustrialGenerators']</xpath>
+                    <value><li>VFE_AdvancedPowerSources</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VFE_NuclearPower']</xpath>
+                    <value><li>VFE_AdvancedPowerSources</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VFE_TidalPower']</xpath>
+                    <value><li>VFE_AdvancedPowerSources</li></value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

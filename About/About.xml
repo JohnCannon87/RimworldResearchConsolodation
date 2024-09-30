@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Research Consolodation</name>
+	<author>Arcjc007</author>
+	<packageId>Arcjc007.ResearchConsolodation</packageId>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<description><![CDATA[
+	Combines some research projects added by other mods into one or into vanilla research to slim down the amount of research to do !
+	]]>
+	</description>
+	<loadAfter>
+		<li>jecrell.doorsexpanded</li>
+		<li>NuanKi.GarageDoorsExpanded</li>
+		<li>lts.I</li>
+		<li>VanillaExpanded.VAPPE</li>
+		<li>VanillaExpanded.VARME</li>
+		<li>VanillaExpanded.VFESecurity</li>
+		<li>VanillaExpanded.VFEPower</li>
+		<li>VanillaExpanded.VPsycastsE</li>
+		<li>VanillaExpanded.VWENL</li>
+		<li>VanillaExpanded.VWEG</li>
+		<li>VanillaExpanded.VWE</li>
+		<li>Mlie.CombatBionics</li>
+	</loadAfter>
+</ModMetaData>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Weapons Expanded</li>
+        </mods>
+        <!-- If the mod is loaded, apply the following patch -->
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- Change existing research defs to point to alternatives-->
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VWE_DesignatedMarksmanRifle']</xpath>
+                    <value><researchPrerequisite>PrecisionRifling</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VWE_SpecializedFirearms']</xpath>
+                    <value><researchPrerequisite>PrecisionRifling</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VWE_Flamethrower']</xpath>
+                    <value><researchPrerequisite>BiofuelRefining</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VWE_HeavyWeapons']</xpath>
+                    <value><researchPrerequisite>HeavyTurrets</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VWE_Crossbow']</xpath>
+                    <value><researchPrerequisite>RecurveBow</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VWE_Longbow']</xpath>
+                    <value><researchPrerequisite>Greatbow</researchPrerequisite></value>
+                </li>
+                <!-- Delete now outdated Research Defs -->
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VWE_DesignatedMarksmanRifle']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VWE_SpecializedFirearms']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VWE_Flamethrower']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VWE_HeavyWeapons']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VWE_Crossbow']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VWE_Longbow']</xpath>
+                </li>
+                <!-- Replace any references to research dependencies -->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VWE_DesignatedMarksmanRifle']</xpath>
+                    <value><li>PrecisionRifling</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VWE_SpecializedFirearms']</xpath>
+                    <value><li>PrecisionRifling</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VWE_Flamethrower']</xpath>
+                    <value><li>BiofuelRefining</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VWE_HeavyWeapons']</xpath>
+                    <value><li>HeavyTurrets</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VWE_Crossbow']</xpath>
+                    <value><li>RecurveBow</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VWE_Longbow']</xpath>
+                    <value><li>Greatbow</li></value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

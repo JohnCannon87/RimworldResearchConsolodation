@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Integrated Implants</li>
+        </mods>
+        <!-- If the mod is loaded, apply the following patch -->
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- Change existing research defs to point to alternatives-->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_BasicImplants']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_BasicHormonalImplants']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_SanguophageImplants']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='I_SanguophageImplants']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_ExtraArms']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_ImplantedExplosives']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_SubdermalArmour']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_ShoulderTurrets']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='I_ShoulderTurrets']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_CranialInsulation']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_BionicTails']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='I_BionicTails']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_EltexAugmentation']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_CaptiveControl']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_Biomimicry']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='I_SkillChipPort']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='LTS_ModularBionics']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='LTS_ModularBionicWeaponryUltra']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='LTS_ModularBionicOptics']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='LTS_ModularBionicArms']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='LTS_ModularBionicArms']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='LTS_ModularBionicLegs']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='LTS_BionicFaceplates']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='LTS_NeuralHyperacceleration']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='LTS_EmergencyImplants']</xpath>
+                    <value><researchPrerequisite>Bionics</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='LTS_EmergencyImplants']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <!-- Delete now outdated Research Def -->
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_BasicImplants']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_BasicHormonalImplants']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_SanguophageImplants']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_ExtraArms']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_ImplantedExplosives']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_SubdermalArmour']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_ShoulderTurrets']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_CranialInsulation']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_BionicTails']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_EltexAugmentation']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_CaptiveControl']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_Biomimicry']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='I_SkillChipPort']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='LTS_ModularBionics']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='LTS_ModularBionicWeaponryUltra']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='LTS_ModularBionicOptics']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='LTS_ModularBionicArms']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='LTS_ModularBionicLegs']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='LTS_BionicFaceplates']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='LTS_NeuralHyperacceleration']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='LTS_EmergencyImplants']</xpath>
+                </li>
+                <!-- Replace any references to research dependencies -->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_BasicImplants']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_BasicHormonalImplants']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_SanguophageImplants']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_ExtraArms']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_ImplantedExplosives']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_SubdermalArmour']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_ShoulderTurrets']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_CranialInsulation']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_BionicTails']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_EltexAugmentation']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_CaptiveControl']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_Biomimicry']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='I_SkillChipPort']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='LTS_ModularBionics']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='LTS_ModularBionicWeaponryUltra']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='LTS_ModularBionicOptics']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='LTS_ModularBionicArms']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='LTS_ModularBionicLegs']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='LTS_BionicFaceplates']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='LTS_NeuralHyperacceleration']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='LTS_EmergencyImplants']</xpath>
+                    <value><li>Bionics</li></value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

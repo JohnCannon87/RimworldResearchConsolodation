@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Weapons Expanded - Non-Lethal</li>
+        </mods>
+        <!-- If the mod is loaded, apply the following patch -->
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- Change existing research defs to point to alternatives-->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisite[text()='VWE_NonLethal']</xpath>
+                    <value><researchPrerequisite>Gunsmithing</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VWE_NonLethal']</xpath>
+                    <value><li>Gunsmithing</li></value>
+                </li>
+                <!-- Delete now outdated Research Defs -->
+                <li Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>//ResearchProjectDef[defName='VWE_NonLethal']</xpath>
+                </li>
+                <!-- Replace any references to research dependencies -->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VWE_NonLethal']</xpath>
+                    <value><li>Gunsmithing</li></value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

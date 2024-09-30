@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Furniture Expanded - Security</li>
+        </mods>
+        <!-- If the mod is loaded, apply the following patch -->
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- Change existing research defs to point to alternatives-->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VFES_SentryGuns']</xpath>
+                    <value><li>GunTurrets</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VFES_Artillery']</xpath>
+                    <value><li>Mortars</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VFES_ConcealedDefenses']</xpath>
+                    <value><li>GunTurrets</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VFES_Railgun']</xpath>
+                    <value><li>ChargedShot</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VFES_EMPCannon']</xpath>
+                    <value><li>ChargedShot</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='VFES_PulseChargedDefenses']</xpath>
+                    <value><li>ChargedShot</li></value>
+                </li>
+                <!-- Delete now outdated Research Def -->
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VFES_SentryGuns']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VFES_Artillery']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VFES_ConcealedDefenses']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VFES_Railgun']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VFES_EMPCannon']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VFES_PulseChargedDefenses']</xpath>
+                </li>
+                <!-- Replace any references to research dependencies -->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VFES_SentryGuns']</xpath>
+                    <value><li>GunTurrets</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VFES_Artillery']</xpath>
+                    <value><li>Mortars</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VFES_ConcealedDefenses']</xpath>
+                    <value><li>GunTurrets</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VFES_Railgun']</xpath>
+                    <value><li>ChargedShot</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VFES_EMPCannon']</xpath>
+                    <value><li>ChargedShot</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VFES_PulseChargedDefenses']</xpath>
+                    <value><li>ChargedShot</li></value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

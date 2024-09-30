@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Armour Expanded</li>
+        </mods>
+        <!-- If the mod is loaded, apply the following patch -->
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- Change existing research defs to point to alternatives-->
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VAE_LeatherTanning']</xpath>
+                    <value><researchPrerequisite>ComplexClothing</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VAE_HazardProtection']</xpath>
+                    <value><researchPrerequisite>ComplexClothing</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VAE_MlitaryCamouflage']</xpath>
+                    <value><researchPrerequisite>ComplexClothing</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VAE_SiegebreakerArmor']</xpath>
+                    <value><researchPrerequisite>PoweredArmor</researchPrerequisite></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>//researchPrerequisite[text()='VAE_TrooperArmor']</xpath>
+                    <value><researchPrerequisite>FlakArmor</researchPrerequisite></value>
+                </li>
+                <!-- Delete now outdated Research Defs -->
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VAE_LeatherTanning']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VAE_HazardProtection']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VAE_MlitaryCamouflage']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VAE_SiegebreakerArmor']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='VAE_TrooperArmor']</xpath>
+                </li>
+                <!-- Replace any references to research dependencies -->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VAE_LeatherTanning']</xpath>
+                    <value><li>ComplexClothing</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VAE_HazardProtection']</xpath>
+                    <value><li>ComplexClothing</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VAE_MlitaryCamouflage']</xpath>
+                    <value><li>ComplexClothing</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VAE_SiegebreakerArmor']</xpath>
+                    <value><li>PoweredArmor</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='VAE_TrooperArmor']</xpath>
+                    <value><li>FlakArmor</li></value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

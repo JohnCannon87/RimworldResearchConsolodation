@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Garage Doors Expanded</li>
+        </mods>
+        <!-- If the mod is loaded, apply the following patch -->
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- Change existing research defs to point to alternatives-->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='GDE_BiggerGarageDoors']</xpath>
+                    <value><li>VVE_BasicVehicles</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//researchPrerequisites/li[text()='GDE_ArmoredDoors']</xpath>
+                    <value><li>VVE_BasicVehicles</li></value>
+                </li>
+                <!-- Delete now outdated Research Def -->
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='GDE_BiggerGarageDoors']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>//ResearchProjectDef[defName='GDE_ArmoredDoors']</xpath>
+                </li>
+                <!-- Replace any references to research dependencies -->
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='GDE_BiggerGarageDoors']</xpath>
+                    <value><li>VVE_BasicVehicles</li></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <success>Always</success>
+                    <xpath>//prerequisites/li[text()='GDE_ArmoredDoors']</xpath>
+                    <value><li>VVE_BasicVehicles</li></value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>
